@@ -1,8 +1,15 @@
 body {
-	background: linear-gradient(rgba(35,20,20,0.55),rgba(35,20,20,0.55)),
-				url("../img/background.png") no-repeat center center fixed;
+	background: linear-gradient(rgba(35,20,20,0.55),rgba(35,20,20,0.55)), url("../img/background.png") no-repeat center center;
+	background-attachment: fixed;
 	background-size: cover;
 	font-family: Helvetica;
+}
+
+/* phones */
+@media (pointer: coarse) and (max-width: 768px) {
+	body {
+		background-attachment: scroll;
+	}
 }
 
 p {
@@ -11,10 +18,18 @@ p {
 }
 
 .container {
+	width: 100%;
 	text-align: center;
 }
 
+.row-center {
+	display: flex;
+	justify-content: center;
+}
+
 .logo img {
+	width: 100%;
+	max-width: 750px;
 	animation-name: logo;
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
@@ -53,10 +68,18 @@ p {
 
 .items {
 	display: flex;
-	justify-content: space-around;
-	flex-basis: 100px;
+	flex-direction: row;
+	flex-wrap: wrap;
 	padding: 18px 0 10px 0;
+}
 
+.item {
+	position: relative;
+	flex-basis: 0;
+	flex-grow: 1;
+  max-width: 100%;
+	padding-right: 30px;
+  padding-left: 30px;
 }
 
 .item img {
@@ -64,7 +87,7 @@ p {
 }
 
 .item img:hover {
-	transform:scale(1.25);
+	transform: scale(1.25);
 }
 
 .img {
@@ -83,26 +106,4 @@ p {
 .footer a {
 	color: #0f82af;
 	text-decoration: none;
-}
-
-@media(min-width: 600px) {
-	.logo img {
-		width: 750px;
-	}
-	.img {
-		width: 100%;
-	}
-	.items {
-		padding: 30px 0 20px 0;
-	}
-}
-
-@media(min-width: 1000px) {
-	.items {
-		justify-content: center;
-	}
-
-	.item:not(:first-child) {
-		margin-left: 90px;
-	}
 }
