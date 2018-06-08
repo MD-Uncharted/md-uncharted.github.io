@@ -9,7 +9,7 @@ var copying = false;
 $(document).ready(function(){
 	var counter = new PlayerCounter({
 	  element: ".player-counter",
-	  ip: 'playuncharted.com:25577',
+	  ip: 'play.playuncharted.com',
 	  format: '{online}',
 	  refreshRate: 10000
 	});
